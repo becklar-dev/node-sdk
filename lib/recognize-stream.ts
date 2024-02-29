@@ -261,6 +261,7 @@ class RecognizeStream extends Duplex {
         err = new Error(msg);
       }
       err.raw = frame;
+      self.on('error', (err) => console.log(err));
       self.emit('error', err);
     }
 
